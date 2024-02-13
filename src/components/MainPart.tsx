@@ -1,5 +1,12 @@
 import me from "../assets/me_square.png";
 import meAlt from "../assets/me_alt_square.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faStackOverflow,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 function MainPart() {
   return (
@@ -45,9 +52,20 @@ function MainPart() {
           </div>
           <br />
           <div>
-            <em>Also also</em>, you can find me
+            <em>Also also</em>, you can find me{" "}
+            <a className="fa" href="https://github.com/orrymr">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a className="fa" href="https://www.linkedin.com/in/orry-messer-010a1040/">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+            <a className="fa" href="https://stackoverflow.com/users/3214345/orrymr">
+              <FontAwesomeIcon icon={faStackOverflow} />
+            </a>
           </div>
-          <div>Or just reach out:</div>
+          <div>
+            Or just reach out: <em>orrymr -at- gmail -dot- com</em>
+          </div>
         </div>
 
         <div id="projects">
@@ -61,10 +79,10 @@ function MainPart() {
               Strava acount? Now you can find out how many fathoms you've run
               with the <a href="#">Pointless Converter</a>.
             </li>
-            <li>
+            {/* <li>
               <em className="project-name">|Quote Unquote|</em> -&gt;{" "}
               <a href="#">Quote Unquote</a>.
-            </li>
+            </li> */}
             <li>
               <em className="project-name" style={{ fontSize: "1em" }}>
                 |Demonstrating The Central Limit Theorem in R|
@@ -112,7 +130,7 @@ function MainPart() {
           </p>
           <p>
             <a href="https://www.youtube.com/@eetufck">
-              ...and my youtube channel
+              ...and my youtube channel <FontAwesomeIcon icon={faYoutube} />
             </a>{" "}
             (which has been known to be updated several times a decade).
             <br />
