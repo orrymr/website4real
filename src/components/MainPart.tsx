@@ -2,6 +2,7 @@ import me from "../assets/me_square.png";
 import meAlt from "../assets/me_alt_square.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBandcamp,
   faGithub,
   faLinkedin,
   faStackOverflow,
@@ -116,7 +117,7 @@ function MainPart() {
             </a>
             lazy, I think.
             <br />
-            Well, <a href="https://orrymesser.bandcamp.com/">here's</a> my
+            Well, <a href="https://orrymesser.bandcamp.com/">here's <FontAwesomeIcon icon={faBandcamp} /></a> my
             Bandcamp (last updated in 1953). En example of which:
             <iframe
               style={{ border: "0", width: "100%", height: "42px" }}
