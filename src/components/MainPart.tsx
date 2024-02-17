@@ -78,7 +78,7 @@ function MainPart() {
               <em className="project-name">|Pointless Converter|</em> -&gt; Have
               you ever wondered how many fathoms you've run? Do you have a
               Strava acount? Now you can find out how many fathoms you've run
-              with the <a href="#">Pointless Converter</a>.
+              with the <a href="https://pointless-converter.orrymesser.dev/">Pointless Converter</a>.
             </li>
             {/* <li>
               <em className="project-name">|Quote Unquote|</em> -&gt;{" "}
