@@ -98,6 +98,16 @@ function MainPart() {
               how this works. Also, there's some R code so you can try this at
               home.
             </li>
+            <li>
+              <em className="project-name" style={{ fontSize: "1em" }}>
+                |Tic Tac Toe|
+              </em>{" "}
+              -&gt; Just me trying out the classic <a href="https://react.dev/learn/tutorial-tic-tac-toe">Tic Tac Toe React Tutorial</a>.
+              <a href="https://orrymr.github.io/tic-tac-toe/">
+                Here it is.
+              </a>{" "}
+              Hey, gotta start somewhere 🙂.
+            </li>
           </ul>
         </div>
         <div id="music">
