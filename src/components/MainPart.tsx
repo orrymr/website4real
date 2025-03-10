@@ -6,6 +6,7 @@ import {
   faGithub,
   faLinkedin,
   faStackOverflow,
+  faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -54,6 +55,9 @@ function MainPart() {
           <br />
           <div>
             <em>Also also</em>, you can find me{" "}
+            <a className="fa" href="https://x.com/orrymr">
+              <FontAwesomeIcon icon={faXTwitter} />
+            </a>
             <a className="fa" href="https://github.com/orrymr">
               <FontAwesomeIcon icon={faGithub} />
             </a>
