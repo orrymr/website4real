@@ -5,7 +5,6 @@ import {
   faBandcamp,
   faGithub,
   faLinkedin,
-  faStackOverflow,
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -61,11 +60,11 @@ function MainPart() {
             <a className="fa" href="https://github.com/orrymr">
               <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a className="fa" href="https://www.linkedin.com/in/orry-messer-010a1040/">
+            <a
+              className="fa"
+              href="https://www.linkedin.com/in/orry-messer-010a1040/"
+            >
               <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a className="fa" href="https://stackoverflow.com/users/3214345/orrymr">
-              <FontAwesomeIcon icon={faStackOverflow} />
             </a>
           </div>
           <div>
@@ -75,14 +74,35 @@ function MainPart() {
 
         <div id="projects">
           <div className="sub-heading">
-            <h1>projects</h1>
+            <h1>stuff</h1>
           </div>
           <ul>
             <li>
-              <em className="project-name">|Pointless Converter|</em> -&gt; Have
-              you ever wondered how many fathoms you've run? Do you have a
-              Strava acount? Now you can find out how many fathoms you've run
-              with the <a href="https://pointless-converter.orrymesser.dev/">Pointless Converter</a>.
+              <em className="project-name">
+                |<a href="https://quoteunquote.io/">QuoteUnquote</a>|
+              </em>{" "}
+              -&gt; Resurface your highlights 💡. Simply login to your Amazon
+              Kindle account and it'll automatically send you a daily digest of
+              your highlights.
+            </li>
+            <li>
+              <em className="project-name">
+                |
+                <a href="https://pointless-converter.orrymesser.dev/">
+                  Pointless Converter
+                </a>
+                |
+              </em>{" "}
+              -&gt; Have you ever wondered how many fathoms you've run? Do you
+              have a Strava acount? Now you can find out how many fathoms you've
+              run with the{" "}
+              <a href="https://pointless-converter.orrymesser.dev/">
+                Pointless Converter
+              </a>{" "}
+              (Edit: this is broken and I'm too lazy to fix it because nobody
+              was using it. So really, it's your fault that his isn't working
+              because you are part of the group of people who wasn't using
+              this.) .
             </li>
             {/* <li>
               <em className="project-name">|Quote Unquote|</em> -&gt;{" "}
@@ -90,7 +110,11 @@ function MainPart() {
             </li> */}
             <li>
               <em className="project-name" style={{ fontSize: "1em" }}>
-                |Demonstrating The Central Limit Theorem in R|
+                |
+                <a href="https://medium.com/@orrymr/demonstrating-the-central-limit-theorem-in-r-a5fef67cbbb">
+                  Demonstrating The Central Limit Theorem in R
+                </a>
+                |
               </em>{" "}
               -&gt; The distributions of means are themselves normally
               distributed... even if the original population isn't normally
@@ -101,16 +125,6 @@ function MainPart() {
               a link to an article I wrote with some pretty picture which shows
               how this works. Also, there's some R code so you can try this at
               home.
-            </li>
-            <li>
-              <em className="project-name" style={{ fontSize: "1em" }}>
-                |Tic Tac Toe|
-              </em>{" "}
-              -&gt; Just me trying out the classic <a href="https://react.dev/learn/tutorial-tic-tac-toe">Tic Tac Toe React Tutorial</a>.
-              <a href="https://orrymr.github.io/tic-tac-toe/">
-                Here it is.
-              </a>{" "}
-              Hey, gotta start somewhere 🙂.
             </li>
           </ul>
         </div>
@@ -131,8 +145,11 @@ function MainPart() {
             </a>
             lazy, I think.
             <br />
-            Well, <a href="https://orrymesser.bandcamp.com/">here's <FontAwesomeIcon icon={faBandcamp} /></a> my
-            Bandcamp (last updated in 1953). En example of which:
+            Well,{" "}
+            <a href="https://orrymesser.bandcamp.com/">
+              here's <FontAwesomeIcon icon={faBandcamp} />
+            </a>{" "}
+            my Bandcamp (last updated in 1953). An example of which:
             <iframe
               style={{ border: "0", width: "100%", height: "42px" }}
               src="https://bandcamp.com/EmbeddedPlayer/album=870617782/size=small/bgcol=333333/linkcol=2ebd35/track=461220127/transparent=true/"
@@ -149,7 +166,7 @@ function MainPart() {
             </a>{" "}
             (which has been known to be updated several times a decade).
             <br />
-            Here's an ancient video from said channel:
+            Here's an ancient video from said channel: <br />
             <iframe
               style={{ width: "560", height: "315" }}
               src="https://www.youtube.com/embed/rM52y1FwMo0?si=TVkk2i91Kul0LtYE"
