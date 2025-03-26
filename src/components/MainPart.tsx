@@ -26,9 +26,8 @@ function MainPart() {
           <div>
             {" "}
             Greetings. My name is Orry. Welcome to my small corner of the
-            internet. Here, you will find an assortment of my{" "}
-            <a href="#projects">projects</a> and even some of my (attempted){" "}
-            <a href="#music">music</a>.
+            internet. I don't know what you're doing here, but then again,
+            what's any of us doing anywhere?
           </div>
           {/* <div>
             <em>Also</em>, if you want to look at my CV, it's{" "}
@@ -40,15 +39,16 @@ function MainPart() {
             What's that you say? You want an "<u>about me</u>" section? Well,
             I'm willing to oblige. I'm a person who makes computers do things
             for a living. Sometimes, the computer doesn't really feel like it,
-            though. In those instances, I either go for a run, play my guitar,{" "}
-            <a href="https://www.goodreads.com/user/show/103071340-orry">
-              read a book
-            </a>{" "}
-            or curse creatively in English, Hebrew or Zulu (in decreasing order
-            of fluency). Or just watch Sopranos or something like that. Tbh,
-            that's most likely.
+            though. In those instances, I either go for a run, play my guitar,
+            read a book or curse creatively in English, Hebrew, Afrikaans or
+            Zulu (in rapid decreasing order of fluency after the first 2 [I
+            pretend to be a polyglot, but I'm just a lowly bi-glot with
+            change]). Or just watch Sopranos, playing{" "}
+            <a href="https://www.aoe2.gg/profile/5377038">Age of Empires 2</a>{" "}
+            or something like that. Tbh, that's most likely.
             <div>OK?</div>
             <div>?סַבָּבָּה</div>
+            <div>Lekker?</div>
             <div>Kulungile?</div>
           </div>
           <br />
@@ -70,6 +70,53 @@ function MainPart() {
           <div>
             Or just reach out: <em>orrymr -at- gmail -dot- com</em>
           </div>
+        </div>
+
+        <div id="projects">
+          <div className="sub-heading">
+            <h1>work work</h1>
+          </div>
+          <ul>
+            <li>
+              <em className="project-name">
+                |<a href="https://fetchanalytics.ai/">Fetch Analytics</a>|
+              </em>{" "}
+              -&gt; Currently CTO @ Fetch Analytics. We're building a platform
+              that helps companies understand mobility data. It's cool.
+            </li>
+            <li>
+              <em className="project-name">
+                |<a href="https://www.discovery.co.za/">Discovery</a>|
+              </em>{" "}
+              -&gt; Data scientist @ the Data Science Lab. Technically part of
+              Health actuarial, but we did work across the group.
+            </li>
+            <li>
+              <em className="project-name">
+                |<a href="https://vatit.com/">Vat IT</a>|
+              </em>{" "}
+              -&gt; Built systems to help companies reclaim VAT. Java, cloud
+              stuff, some computer vision, and a whole lot of coffee.
+            </li>
+            <li>
+              <em className="project-name">
+                |<a href="https://www.isazi.ai/">Isazi Consulting</a>|
+              </em>{" "}
+              -&gt; ML type of work mostly.
+            </li>
+            <li>
+              <em className="project-name">
+                |
+                <a href="https://www.wits.ac.za/">
+                  University of the Witwatersrand
+                </a>
+                |
+              </em>{" "}
+              -&gt; Lectured 1 course (Programming Languages) in the School of
+              Computer Science. Was a cool expierence. Also did a whole of
+              tutoring. I think that's commonly referred to as TA'ing in the US?
+            </li>
+          </ul>
         </div>
 
         <div id="projects">
