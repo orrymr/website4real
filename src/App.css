@@ -1,15 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 4px #00ff9f, 0 0 8px #00ff9f, 0 0 12px #00ff9f;
+  }
+  50% {
+    text-shadow: 0 0 8px #00ff9f, 0 0 16px #00ff9f, 0 0 24px #00ff9f;
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #36454f;
-  background-color: #ffffff;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #00ff9f;
+  background: linear-gradient(180deg, #0a0e1a 0%, #0f1419 100%);
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 159, 0.03) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 255, 159, 0.03) 3px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ff9f, transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.3;
 }
 
 p {
@@ -20,24 +84,42 @@ p {
 .main-part {
   margin: 4em auto;
   padding: 2em 1.5em;
-  max-width: 800px;
-  border-top: 1px solid #d3d3d3;
+  max-width: 900px;
+  border: 1px solid #00ff9f;
+  border-radius: 2px;
+  background: rgba(10, 14, 26, 0.85);
+  box-shadow: 0 0 30px rgba(0, 255, 159, 0.15),
+              inset 0 0 60px rgba(0, 255, 159, 0.02);
+  position: relative;
+  z-index: 3;
+}
+
+.main-part::before {
+  content: '>';
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  color: #ff006e;
+  font-weight: 700;
+  animation: cursor-blink 1s infinite;
 }
 
 a {
-  color: #708090;
+  color: #00d9ff;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 a:hover {
-  color: #36454f;
-  border-bottom-color: #36454f;
+  color: #00ff9f;
+  border-bottom-color: #00ff9f;
+  text-shadow: 0 0 8px #00ff9f;
 }
 
 a:visited {
-  color: #708090;
+  color: #00b8d4;
 }
 
 .name-and-pics {
@@ -45,7 +127,8 @@ a:visited {
   align-items: center;
   margin-bottom: 2em;
   padding-bottom: 1.5em;
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid #00ff9f;
+  box-shadow: 0 1px 0 rgba(0, 255, 159, 0.3);
 }
 
 .my-name {
@@ -55,9 +138,16 @@ a:visited {
 
 .my-name > h3 {
   font-weight: 700;
-  font-size: 1.5em;
-  color: #36454f;
-  letter-spacing: -0.5px;
+  font-size: 1.6em;
+  color: #00ff9f;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  animation: glow 3s ease-in-out infinite;
+}
+
+.my-name > h3::before {
+  content: '$ ';
+  color: #ff006e;
 }
 
 .sub-heading {
@@ -68,11 +158,18 @@ a:visited {
 
 .sub-heading > h1 {
   font-weight: 700;
-  font-size: 1.8em;
-  color: #36454f;
-  border-bottom: 2px solid #d3d3d3;
+  font-size: 1.4em;
+  color: #ff006e;
+  border-bottom: 2px solid #ff006e;
   padding-bottom: 0.3em;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+.sub-heading > h1::before {
+  content: '# ';
+  color: #00d9ff;
 }
 
 .pics {
@@ -84,9 +181,11 @@ a:visited {
   width: 5em;
   margin-left: 2em;
   position: absolute;
-  border-radius: 50%;
-  border: 2px solid #d3d3d3;
+  border-radius: 4px;
+  border: 2px solid #00ff9f;
   transition: opacity 0.2s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 159, 0.4);
+  filter: brightness(0.9) contrast(1.1);
 }
 
 .pic-of-me:active {
@@ -97,14 +196,17 @@ a:visited {
   height: 5em;
   width: 5em;
   margin-left: 2em;
-  border-radius: 50%;
-  border: 2px solid #d3d3d3;
+  border-radius: 4px;
+  border: 2px solid #00ff9f;
+  box-shadow: 0 0 20px rgba(0, 255, 159, 0.4);
+  filter: brightness(0.9) contrast(1.1);
 }
 
 .about-me > u {
   text-decoration: none;
-  border-bottom: 2px solid #36454f;
+  border-bottom: 2px solid #00ff9f;
   font-weight: 600;
+  color: #00ff9f;
 }
 
 #projects > ul {
@@ -115,32 +217,61 @@ a:visited {
 #projects > ul > li {
   margin-bottom: 1.5em;
   padding-left: 1em;
-  border-left: 2px solid #d3d3d3;
+  border-left: 3px solid #00ff9f;
+  transition: all 0.3s ease;
+}
+
+#projects > ul > li::before {
+  content: '→ ';
+  color: #ff006e;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  font-weight: 700;
 }
 
 #projects > ul > li:hover {
-  border-left-color: #708090;
+  border-left-color: #ff006e;
+  padding-left: 1.5em;
+  background: rgba(0, 255, 159, 0.03);
 }
 
 .project-name {
   font-style: normal;
-  font-size: 1.1em;
+  font-size: 1.05em;
   font-weight: 700;
-  color: #36454f;
+  color: #00d9ff;
+}
+
+.project-name::before {
+  content: '';
+  color: #ff006e;
+}
+
+.project-name::after {
+  content: '';
+  color: #ff006e;
 }
 
 .fa {
   margin-right: 1em;
-  color: #708090;
-  transition: color 0.3s ease;
+  color: #00d9ff;
+  transition: all 0.3s ease;
 }
 
 .fa:hover {
-  color: #36454f;
+  color: #00ff9f;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px #00ff9f);
 }
 
 #music iframe {
   margin-top: 1em;
-  border: 1px solid #d3d3d3;
-  border-radius: 4px;
+  border: 1px solid #00ff9f;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0, 255, 159, 0.2);
+}
+
+em {
+  color: #00d9ff;
+  font-style: normal;
 }
