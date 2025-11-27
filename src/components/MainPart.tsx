@@ -79,10 +79,17 @@ function MainPart() {
           <ul>
             <li>
               <em className="project-name">
+                |<a href="https://www.flexclub.co.za/">FlexClub</a>|
+              </em>{" "}
+              -&gt; Presently Founding Engineer @ FlexClub 💪. Solving for
+              vehicle access. Making getting access to a car simple.
+            </li>
+            <li>
+              <em className="project-name">
                 |<a href="https://fetchanalytics.ai/">Fetch Analytics</a>|
               </em>{" "}
-              -&gt; Currently CTO @ Fetch Analytics. We're building a platform
-              that helps companies understand mobility data. It's cool.
+              -&gt; Ex CTO @ Fetch Analytics. We were building a platform that
+              helps companies understand mobility data. It was cool.
             </li>
             <li>
               <em className="project-name">
