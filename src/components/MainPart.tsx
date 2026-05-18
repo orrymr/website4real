@@ -54,16 +54,6 @@ function MainPart() {
               </span>
             </h1>
             <p className="hero-lede">
-              I'm an engineer who makes computers do things for a living.
-              Currently{" "}
-              <strong>
-                Founding Engineer @{" "}
-                <a href="https://www.flexclub.co.za/">FlexClub</a>
-              </strong>
-              , solving for vehicle access. Previously CTO @ Fetch Analytics and
-              data scientist @ Discovery.
-            </p>
-            <p className="hero-lede">
               Welcome to my small corner of the internet. I don't know what
               you're doing here, but then again, what's any of us doing
               anywhere?
