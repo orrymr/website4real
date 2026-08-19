@@ -109,14 +109,7 @@ function MainPart() {
               book or curse creatively in English, Hebrew, Afrikaans or Zulu (in
               rapid decreasing order of fluency after the first 2 [I pretend to
               be a polyglot, but I'm just a lowly bi-glot with change]). Or just
-              watch Sopranos, playing{" "}
-              <a href="https://www.aoe2.gg/profile/5377038">Age of Empires 2</a>{" "}
-              or something like that. Tbh, that's most likely.
-            </p>
-            <p>
-              Or watch Sopranos. Or play{" "}
-              <a href="https://www.aoe2.gg/profile/5377038">Age of Empires 2</a>
-              . Tbh, that's most likely.
+              watch Sopranos or something like that. Tbh, that's most likely.
             </p>
             <div className="lang-list">
               <span>OK?</span>
