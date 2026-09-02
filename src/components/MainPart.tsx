@@ -215,13 +215,14 @@ function MainPart() {
             <article className="card">
               <div className="card-head">
                 <div className="card-name">
-                  <a href="https://quoteunquote.io/">QuoteUnquote</a>
+                  <a href="https://brightline.ink/">Brightline</a>
                 </div>
                 <span className="card-badge">Live</span>
               </div>
               <div className="card-body">
-                Resurface your highlights 💡. Login with your Kindle account and
-                get a daily digest of your highlights.
+                Your Kindle highlights, resurfaced daily 💡. Connect your Kindle
+                library and get a handful of your own highlights emailed to you
+                every morning.
               </div>
             </article>
 
