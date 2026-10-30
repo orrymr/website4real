@@ -1,5 +1,4 @@
-import me from "../assets/me_square.png";
-import meAlt from "../assets/me_alt_square.png";
+import me from "../assets/me_founder.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBandcamp,
@@ -24,13 +23,109 @@ function SubstackIcon() {
   );
 }
 
+type Entry = {
+  name: string;
+  href: string;
+  status: string;
+  current?: boolean;
+  body: string;
+};
+
+const work: Entry[] = [
+  {
+    name: "Mobillis",
+    href: "https://mobillis.com/",
+    status: "Now",
+    current: true,
+    body: "Founding Engineer 💪. Solving for vehicle access — making it simple to get a car.",
+  },
+  {
+    name: "Fetch Analytics",
+    href: "https://fetchanalytics.ai/",
+    status: "Past",
+    body: "Senior engineer to CTO over five years. Built the team and the platform that turns mobile location data into footfall insights.",
+  },
+  {
+    name: "Discovery",
+    href: "https://www.discovery.co.za/",
+    status: "Past",
+    body: "Data scientist in the Data Science Lab, working across the group.",
+  },
+  {
+    name: "Vat IT",
+    href: "https://vatit.com/",
+    status: "Past",
+    body: "Built systems to help companies reclaim VAT. Java, cloud stuff, some computer vision, and a whole lot of coffee.",
+  },
+  {
+    name: "Isazi Consulting",
+    href: "https://www.isazi.ai/",
+    status: "Past",
+    body: "Machine learning consulting.",
+  },
+  {
+    name: "University of the Witwatersrand",
+    href: "https://www.wits.ac.za/",
+    status: "Past",
+    body: "Lectured Programming Languages in the School of Computer Science.",
+  },
+];
+
+const projects: Entry[] = [
+  {
+    name: "Brightline",
+    href: "https://brightline.ink/",
+    status: "Live",
+    current: true,
+    body: "Your Kindle highlights, resurfaced daily 💡. Connect your Kindle library and get a handful of your own highlights emailed to you every morning.",
+  },
+  {
+    name: "Pointless Converter",
+    href: "https://pointless-converter.orrymesser.dev/",
+    status: "RIP",
+    body: "Ever wondered how many fathoms you've run? Have a Strava account? Find out. Retired.",
+  },
+  {
+    name: "Substack",
+    href: "https://orrymr.substack.com/",
+    status: "Live",
+    current: true,
+    body: "I write about engineering, building things, and whatever else is on my mind. Drop your email if you're into that sort of thing.",
+  },
+  {
+    name: "Central Limit Theorem in R",
+    href: "https://medium.com/@orrymr/demonstrating-the-central-limit-theorem-in-r-a5fef67cbbb",
+    status: "Article",
+    body: "Distributions of means are themselves normally distributed... even if the original population isn't. That's mad. Pretty pictures and R code included.",
+  },
+];
+
+function EntryList({ entries }: { entries: Entry[] }) {
+  return (
+    <ol className="entries">
+      {entries.map((e) => (
+        <li className="entry" key={e.name}>
+          <div className="entry-head">
+            <a className="entry-name" href={e.href}>
+              {e.name}
+            </a>
+            <span className={e.current ? "entry-status current" : "entry-status"}>
+              {e.status}
+            </span>
+          </div>
+          <p className="entry-body">{e.body}</p>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 function MainPart() {
   return (
     <>
       <nav className="nav">
         <div className="nav-inner">
           <a href="#top" className="nav-brand">
-            <span className="dot" aria-hidden="true" />
             Orry Messer
           </a>
           <div className="nav-links">
@@ -47,288 +142,136 @@ function MainPart() {
       <main className="page" id="top">
         <section className="hero">
           <div className="hero-text">
-            <h1>
-              Hey, I'm Orry{" "}
-              <span className="wave" aria-hidden="true">
-                👋
-              </span>
-            </h1>
+            <h1>Hey, I'm Orry 👋</h1>
             <p className="hero-lede">
-              Welcome to my small corner of the internet. I don't know what
-              you're doing here, but then again, what's any of us doing
-              anywhere?
+              I build data products. Founding Engineer at Mobillis, previously
+              CTO at Fetch Analytics.
             </p>
             <div className="hero-socials">
-              <a
-                className="icon-link"
-                href="https://x.com/orrymr"
-                aria-label="X / Twitter"
-              >
+              <a href="https://x.com/orrymr" aria-label="X / Twitter">
                 <FontAwesomeIcon icon={faXTwitter} />
               </a>
-              <a
-                className="icon-link"
-                href="https://github.com/orrymr"
-                aria-label="GitHub"
-              >
+              <a href="https://github.com/orrymr" aria-label="GitHub">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
               <a
-                className="icon-link"
                 href="https://www.linkedin.com/in/orry-messer-010a1040/"
                 aria-label="LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              <a
-                className="icon-link"
-                href="https://orrymr.substack.com/"
-                aria-label="Substack"
-              >
+              <a href="https://orrymr.substack.com/" aria-label="Substack">
                 <SubstackIcon />
               </a>
             </div>
           </div>
-          <div className="hero-pic">
+          <figure className="hero-pic">
             <img src={me} alt="Orry Messer" />
-            <img className="pic-alt" src={meAlt} alt="" />
-          </div>
+          </figure>
         </section>
 
-        <section id="about">
-          <div className="section-label">About</div>
-          <h2 className="section-title">
-            You want an <em>about me</em> section?
-            <br /> I'm willing to oblige.
-          </h2>
-          <div className="about">
-            <p>
-              I'm a person who makes computers do things for a living.
-              Sometimes, the computer doesn't really feel like it, though. In
-              those instances, I either go for a run, play my guitar, read a
-              book or curse creatively in English, Hebrew, Afrikaans or Zulu (in
-              rapid decreasing order of fluency after the first 2 [I pretend to
-              be a polyglot, but I'm just a lowly bi-glot with change]). Or just
-              watch Sopranos or something like that. Tbh, that's most likely.
+        <section id="about" className="split">
+          <header className="split-head">
+            <div className="section-label">About</div>
+            <h2 className="section-title">
+              You want an <em>about me</em> section? I'm willing to oblige.
+            </h2>
+          </header>
+          <div className="split-body">
+            <p className="prose">
+              I make computers do things for a living. When they won't
+              cooperate, I go for a run, play guitar, read, or curse creatively
+              in English, Hebrew, Afrikaans or Zulu, in rapidly decreasing order
+              of fluency. Or watch The Sopranos. Usually that.
             </p>
-            <div className="lang-list">
+            <p className="lang-list">
               <span>OK?</span>
               <span>סַבָּבָּה?</span>
               <span>Lekker?</span>
               <span>Kulungile?</span>
-            </div>
+            </p>
           </div>
         </section>
 
-        <section id="work">
-          <div className="section-label">Where I've been</div>
-          <h2 className="section-title">
-            Work, <em>work</em>.
-          </h2>
-          <div className="cards">
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://www.flexclub.co.za/">FlexClub</a>
-                </div>
-                <span className="card-badge">Now</span>
-              </div>
-              <div className="card-body">
-                Founding Engineer 💪. Solving for vehicle access — making it
-                simple to get a car.
-              </div>
-            </article>
+        <section id="work" className="split">
+          <header className="split-head">
+            <div className="section-label">Where I've been</div>
+            <h2 className="section-title">
+              Work, <em>work</em>.
+            </h2>
+          </header>
+          <div className="split-body">
+            <EntryList entries={work} />
+          </div>
+        </section>
 
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://fetchanalytics.ai/">Fetch Analytics</a>
-                </div>
-                <span className="card-badge past">Past</span>
-              </div>
-              <div className="card-body">
-                CTO. Built a platform that helps companies understand mobility
-                data. It was cool.
-              </div>
-            </article>
+        <section id="projects" className="split">
+          <header className="split-head">
+            <div className="section-label">Side things</div>
+            <h2 className="section-title">
+              Stuff I've <em>made</em>.
+            </h2>
+          </header>
+          <div className="split-body">
+            <EntryList entries={projects} />
+          </div>
+        </section>
 
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://www.discovery.co.za/">Discovery</a>
-                </div>
-                <span className="card-badge past">Past</span>
-              </div>
-              <div className="card-body">
-                Data scientist @ the Data Science Lab. Technically part of
-                Health actuarial, but we did work across the group.
-              </div>
-            </article>
-
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://vatit.com/">Vat IT</a>
-                </div>
-                <span className="card-badge past">Past</span>
-              </div>
-              <div className="card-body">
-                Built systems to help companies reclaim VAT. Java, cloud stuff,
-                some computer vision, and a whole lot of coffee.
-              </div>
-            </article>
-
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://www.isazi.ai/">Isazi Consulting</a>
-                </div>
-                <span className="card-badge past">Past</span>
-              </div>
-              <div className="card-body">ML-flavoured work, mostly.</div>
-            </article>
-
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://www.wits.ac.za/">
-                    University of the Witwatersrand
+        <section id="music" className="split">
+          <header className="split-head">
+            <div className="section-label">When I'm not coding</div>
+            <h2 className="section-title">
+              I make <em>music</em>, sometimes.
+            </h2>
+          </header>
+          <div className="split-body">
+            <p className="prose">
+              Not everything is code.
+            </p>
+            <div className="music-grid">
+              <div className="media">
+                <h3>
+                  <FontAwesomeIcon icon={faBandcamp} />{" "}
+                  <a href="https://orrymesser.bandcamp.com/">Bandcamp</a>
+                </h3>
+                <p>Last updated in 1953. An example:</p>
+                <iframe
+                  style={{ height: "42px" }}
+                  src="https://bandcamp.com/EmbeddedPlayer/album=870617782/size=small/bgcol=ffffff/linkcol=13212e/track=461220127/transparent=true/"
+                  seamless
+                  title="Bandcamp player"
+                >
+                  <a href="https://orrymesser.bandcamp.com/album/ep-part-deux-ciao-acoustico">
+                    EP, Part Deux. (Ciao Acoustico) by Orry Messer
                   </a>
-                </div>
-                <span className="card-badge past">Past</span>
+                </iframe>
               </div>
-              <div className="card-body">
-                Lectured Programming Languages in the School of Computer
-                Science. Also did a bunch of tutoring (TA'ing in the US, I
-                think?).
-              </div>
-            </article>
-          </div>
-        </section>
 
-        <section id="projects">
-          <div className="section-label">Side things</div>
-          <h2 className="section-title">
-            Stuff I've <em>made</em>.
-          </h2>
-          <div className="cards">
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://brightline.ink/">Brightline</a>
-                </div>
-                <span className="card-badge">Live</span>
+              <div className="media">
+                <h3>
+                  <FontAwesomeIcon icon={faYoutube} />{" "}
+                  <a href="https://www.youtube.com/@eetufck">YouTube</a>
+                </h3>
+                <p>
+                  Known to be updated several times a decade. An ancient
+                  artifact:
+                </p>
+                <iframe
+                  className="yt"
+                  src="https://www.youtube.com/embed/rM52y1FwMo0?si=TVkk2i91Kul0LtYE"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                />
               </div>
-              <div className="card-body">
-                Your Kindle highlights, resurfaced daily 💡. Connect your Kindle
-                library and get a handful of your own highlights emailed to you
-                every morning.
-              </div>
-            </article>
-
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://pointless-converter.orrymesser.dev/">
-                    Pointless Converter
-                  </a>
-                </div>
-                <span className="card-badge past">RIP</span>
-              </div>
-              <div className="card-body">
-                Ever wondered how many fathoms you've run? Have a Strava
-                account? Find out. (Edit: this is broken and I'm too lazy to fix
-                it because nobody was using it. So really, it's your fault.)
-              </div>
-            </article>
-
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://orrymr.substack.com/">Substack</a>
-                </div>
-                <span className="card-badge">Live</span>
-              </div>
-              <div className="card-body">
-                I write about engineering, building things, and whatever else is
-                on my mind. Drop your email if you're into that sort of thing.
-              </div>
-            </article>
-
-            <article className="card">
-              <div className="card-head">
-                <div className="card-name">
-                  <a href="https://medium.com/@orrymr/demonstrating-the-central-limit-theorem-in-r-a5fef67cbbb">
-                    Central Limit Theorem in R
-                  </a>
-                </div>
-                <span className="card-badge past">Article</span>
-              </div>
-              <div className="card-body">
-                Distributions of means are themselves normally distributed...
-                even if the original population isn't. That's mad. Pretty
-                pictures and R code included.
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="music">
-          <div className="section-label">When I'm not coding</div>
-          <h2 className="section-title">
-            I make <em>music</em>, sometimes.
-          </h2>
-          <p className="music-intro">
-            Not sure if I should put music here, but here we are. Really just to
-            beef up the contents section, otherwise it'd look like I'm lazy. And
-            I'm not. I'm the opposite of lazy. What's the word for that...{" "}
-            <a href="https://www.google.com/search?q=not+symbol+logic">¬</a>
-            lazy, I think.
-          </p>
-          <div className="music-grid">
-            <div className="media-card">
-              <h3>
-                <FontAwesomeIcon icon={faBandcamp} />{" "}
-                <a href="https://orrymesser.bandcamp.com/">Bandcamp</a>
-              </h3>
-              <p>Last updated in 1953. An example:</p>
-              <iframe
-                style={{ height: "42px" }}
-                src="https://bandcamp.com/EmbeddedPlayer/album=870617782/size=small/bgcol=ffffff/linkcol=1d4ed8/track=461220127/transparent=true/"
-                seamless
-                title="Bandcamp player"
-              >
-                <a href="https://orrymesser.bandcamp.com/album/ep-part-deux-ciao-acoustico">
-                  EP, Part Deux. (Ciao Acoustico) by Orry Messer
-                </a>
-              </iframe>
-            </div>
-
-            <div className="media-card">
-              <h3>
-                <FontAwesomeIcon icon={faYoutube} />{" "}
-                <a href="https://www.youtube.com/@eetufck">YouTube</a>
-              </h3>
-              <p>
-                Known to be updated several times a decade. An ancient artifact:
-              </p>
-              <iframe
-                className="yt"
-                src="https://www.youtube.com/embed/rM52y1FwMo0?si=TVkk2i91Kul0LtYE"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              />
             </div>
           </div>
         </section>
 
-        <section id="contact">
-          <div className="contact-card">
-            <h2>Contact</h2>
-            <div className="contact-email">
-              orrymr <span style={{ opacity: 0.5 }}>at</span> gmail{" "}
-              <span style={{ opacity: 0.5 }}>dot</span> com
-            </div>
+        <section id="contact" className="contact">
+          <div className="section-label">Contact</div>
+          <div className="contact-email">
+            orrymr <span className="dim">at</span> gmail{" "}
+            <span className="dim">dot</span> com
           </div>
         </section>
       </main>
